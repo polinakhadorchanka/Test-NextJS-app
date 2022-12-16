@@ -2,7 +2,7 @@ import React, {memo, PropsWithChildren, ReactElement, useEffect, useRef, useStat
 import styles from './Input.module.css';
 import css from "styled-jsx/css";
 
-interface InputProps extends PropsWithChildren {
+interface InputProps {
   type?: 'text' | 'password',
   name?: string,
   defaultValue?: string,
@@ -26,8 +26,7 @@ const Input: React.FC<InputProps> = (
     placeholder,
     required = false,
     autoComplete = false,
-    handler,
-    children
+    handler
   }) => {
   const [value, setValue] = useState(defaultValue);
   const [cssStyle, setStyle] = useState({});

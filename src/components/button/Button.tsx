@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = (
   const [cssStyle, setStyle] = useState({});
 
   useEffect(() => {
-    setStyle( {
+    setStyle({
       'width': `${width === 'fill' ? '100%' : 'auto'}`,
       'height': `${height === 'fill' ? '100%' : 'auto'}`,
       '--color': `hsl(${primaryColor}, 25%, 50%)`,
