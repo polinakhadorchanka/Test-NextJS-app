@@ -53,7 +53,7 @@ html {
     background-color: var(--dark);
 }
 
-.button-content {
+.flex-content {
     display: flex;
     flex-direction: row;
     justify-content: center;

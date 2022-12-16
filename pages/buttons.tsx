@@ -12,7 +12,7 @@ const Buttons = () => {
           <div className={'content__column content__column_light'}>
             <Button>Next</Button>
             <Button primaryColor={'80'}>
-              <div className={'button-content'}>
+              <div className={'flex-content'}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -37,7 +37,7 @@ const Buttons = () => {
             <Button primaryColor={'80'} width={'fill'} disabled={true}>Next Button</Button>
 
             <Button style={'light'} primaryColor={'170'} width={'fill'}>
-              <div className={'button-content'}>
+              <div className={'flex-content'}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
@@ -70,7 +70,7 @@ const Buttons = () => {
           </div>
           <div className={'content__column content__column_dark'}>
             <Button>
-              <div className={'button-content'}>
+              <div className={'flex-content'}>
                 <span>Next</span>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -95,7 +95,7 @@ const Buttons = () => {
             <Button primaryColor={'80'} width={'fill'}>Next Button</Button>
 
             <Button style={'light'} primaryColor={'170'} width={'fill'} disabled={true}>
-              <div className={'button-content'}>
+              <div className={'flex-content'}>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
