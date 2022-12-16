@@ -9,7 +9,7 @@ interface InputProps {
   width?: 'auto' | 'fill',
   primaryColor?: string,
   disabled?: boolean,
-  placeholder?: string,
+  label?: string,
   required?: boolean,
   autoComplete?: boolean,
   handler?: () => void
@@ -23,7 +23,7 @@ const Input: React.FC<InputProps> = (
     width = 'auto',
     primaryColor = '336',
     disabled = false,
-    placeholder,
+    label,
     required = false,
     autoComplete = false,
     handler
@@ -39,7 +39,7 @@ const Input: React.FC<InputProps> = (
       '--color': `hsla(${primaryColor}, 25%, 50%, 0.4)`,
       '--color-hover': `hsl(${primaryColor}, 45%, 42%)`
     });
-  }, [placeholder, primaryColor, placeholder]);
+  }, [label, width, primaryColor]);
 
   return (
     <div
@@ -59,7 +59,7 @@ const Input: React.FC<InputProps> = (
         className={`${value.length > 0 ? styles.up : ''}`}
         ref={labelRef}
         onClick={() => {inputRef.current?.focus()}}>
-        {placeholder} {required && '*'}
+        {label} {required && '*'}
       </label>
     </div>
   );
