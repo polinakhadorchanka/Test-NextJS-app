@@ -1,15 +1,17 @@
 import React, {memo, PropsWithChildren, useEffect, useState} from 'react';
 import styles from './Chip.module.css';
-
+import { style } from './types';
 
 interface ChipProps extends PropsWithChildren {
-  style?: 'light' | 'contrast' | 'outlined',
+  ID?: number,
+  style?: style,
   primaryColor?: string,
-  onClose?: () => void
+  onClose?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>, ID?: number) => void
 }
 
 const Chip: React.FC<ChipProps> = (
   {
+    ID,
     style = 'contrast',
     primaryColor = '336',
     onClose,
@@ -33,7 +35,7 @@ const Chip: React.FC<ChipProps> = (
           onClose &&
           <div
             className={styles.closeBtn}
-            onClick={onClose}></div>
+            onClick={(e) => onClose(e, ID)}></div>
         }
       </div>
     </div>

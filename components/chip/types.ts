@@ -1,0 +1,1 @@
+export type style = 'light' | 'contrast' | 'outlined';

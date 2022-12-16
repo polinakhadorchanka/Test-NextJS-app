@@ -1,9 +1,10 @@
 import React, {memo, PropsWithChildren, useEffect, useState} from 'react';
 import styles from './Button.module.css';
+import {btnType, style} from "./types";
 
 interface ButtonProps extends PropsWithChildren {
-  type?: 'button' | 'submit' | 'reset',
-  style?: 'light' | 'contrast' | 'outlined',
+  type?: btnType,
+  style?: style,
   width?: 'auto' | 'fill',
   height?: 'auto' | 'fill',
   primaryColor?: string,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../src/components/button/Button';
+import { Button } from '@/components/button';
 
 const Buttons = () => {
   return (
