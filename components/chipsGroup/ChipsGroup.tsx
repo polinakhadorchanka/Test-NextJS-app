@@ -3,8 +3,6 @@ import styles from './ChipsGroup.module.css';
 import Chip from "../chip/Chip";
 import {ChipsGroupElement, style} from "./types";
 
-
-
 interface ChipGroupProps {
   chips?: ChipsGroupElement[],
   style?: style,

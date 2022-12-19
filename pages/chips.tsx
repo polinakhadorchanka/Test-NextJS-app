@@ -1,95 +1,47 @@
 import React, {useState} from 'react';
 import {ChipsGroup} from '@/components/chipsGroup';
 import {Chip} from '@/components/chip';
+import {Dialog} from "@/components/dialog";
+import {Button} from "@/components/button";
+
+const INITIAL = [
+  {
+    ID: 1,
+    value: 'First'
+  },
+  {
+    ID: 2,
+    value: 'Second'
+  },
+  {
+    ID: 3,
+    value: 'Abc Abc'
+  },
+  {
+    ID: 4,
+    value: 'Four 4'
+  },
+  {
+    ID: 5,
+    value: 'Chip element'
+  }];
 
 const Chips = () => {
-  const [elements, setElements] = useState([
-    {
-      ID: 1,
-      value: 'First'
-    },
-    {
-      ID: 2,
-      value: 'Second'
-    },
-    {
-      ID: 3,
-      value: 'Abc Abc'
-    },
-    {
-      ID: 4,
-      value: 'Four 4'
-    },
-    {
-      ID: 5,
-      value: 'Chip element'
-    }]);
-  const [elements1, setElements1] = useState([
-    {
-      ID: 1,
-      value: 'First'
-    },
-    {
-      ID: 2,
-      value: 'Second'
-    },
-    {
-      ID: 3,
-      value: 'Abc Abc'
-    },
-    {
-      ID: 4,
-      value: 'Four 4'
-    },
-    {
-      ID: 5,
-      value: 'Chip element'
-    }]);
-  const [elements2, setElements2] = useState([
-    {
-      ID: 1,
-      value: 'First'
-    },
-    {
-      ID: 2,
-      value: 'Second'
-    },
-    {
-      ID: 3,
-      value: 'Abc Abc'
-    },
-    {
-      ID: 4,
-      value: 'Four 4'
-    },
-    {
-      ID: 5,
-      value: 'Chip element'
-    }]);
-  const [elements3, setElements3] = useState([
-    {
-      ID: 1,
-      value: 'First'
-    },
-    {
-      ID: 2,
-      value: 'Second'
-    },
-    {
-      ID: 3,
-      value: 'Abc Abc'
-    },
-    {
-      ID: 4,
-      value: 'Four 4'
-    },
-    {
-      ID: 5,
-      value: 'Chip element'
-    }]);
+  const [elements, setElements] = useState(INITIAL);
+  const [elements1, setElements1] = useState(INITIAL);
+  const [elements2, setElements2] = useState(INITIAL);
+  const [elements3, setElements3] = useState(INITIAL);
+
+  const [opened, setOpened] = useState(false);
 
   return (
     <main className={'main'}>
+      <Button handler={() => setOpened(true)}>Открыть</Button>
+      <Dialog opened={opened} onClose={() => setOpened(false)}>
+        <div>Hello!</div>
+        <br/><br/>
+        <Button handler={() => setOpened(false)}>Закрыть</Button>
+      </Dialog>
       <div className={'container'}>
         <div className={'content'}>
           <div className={'content__description'}>
