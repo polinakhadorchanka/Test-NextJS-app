@@ -19,7 +19,7 @@
 
 .content {
     width: 100%;
-    padding: 25px;
+    padding: 30px;
 
     background: var(--bg-dialog);
 }
@@ -31,32 +31,14 @@
 
 @media (min-width: 640px) {
     .dialog {
-        --bg: rgba(241, 241, 241, 0.9);
-        --bg-dialog: #F9F9F9;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        width: 100vw;
-        height: 100vh;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
-        background-color: var(--bg);
-        opacity: 0;
-        transition: opacity 0.2s ease-out;
     }
 
     .content {
         width: auto;
         display: inline-block;
-
-        padding: 25px;
-
-        background: var(--bg-dialog);
 
         box-shadow: 7px 7px 20px 10px rgba(46, 103, 140, 0.2), 0 6px 60px rgba(0, 0, 0, 0.12);
         border-radius: 20px;
