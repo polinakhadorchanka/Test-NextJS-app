@@ -1,10 +1,10 @@
 .todoContainer {
     width: 100%;
     display: flex;
+    column-gap: 20px;
+
     flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .tagSetter {
@@ -34,6 +34,7 @@
     font-size: 0.6rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 5px;
 }
 
@@ -41,4 +42,20 @@
     justify-self: end;
     display: flex;
     justify-content: center;
+}
+
+.btnWidth {
+    width: 100%;
+}
+
+@media (min-width: 450px) {
+    .todoContainer {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .btnWidth {
+        width: auto;
+    }
 }
