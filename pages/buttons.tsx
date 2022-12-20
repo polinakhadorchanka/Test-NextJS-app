@@ -8,7 +8,7 @@ const Buttons = () => {
       <div className={'container'}>
         <div className={'content'}>
           <div className={'content__description'}>
-            <h1>Component BUTTON</h1>
+            <h2>Component BUTTON</h2>
           </div>
           <div className={'content__column content__column_light'}>
             <Button>Next</Button>

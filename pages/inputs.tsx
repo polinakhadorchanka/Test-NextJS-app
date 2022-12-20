@@ -26,7 +26,7 @@ const Inputs = () => {
       <div className={'container'}>
         <div className={'content'}>
           <div className={'content__description'}>
-            <h1>Component INPUT</h1>
+            <h2>Component INPUT</h2>
           </div>
           <div className={'content__column content__column_light'}>
             <Input name={'i1'} type={'text'} label={'Input'} required={true}

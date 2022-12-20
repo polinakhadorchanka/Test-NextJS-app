@@ -38,7 +38,7 @@ const Chips = () => {
       <div className={'container'}>
         <div className={'content'}>
           <div className={'content__description'}>
-            <h1>Component CHIP & CHIPSGROUP</h1>
+            <h2>Component CHIP & CHIPSGROUP</h2>
           </div>
           <div className={'content__column content__column_light'}>
             <ChipsGroup chips={elements} setChips={setElements} style={'contrast'}/>
