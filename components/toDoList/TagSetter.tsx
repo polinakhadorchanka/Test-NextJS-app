@@ -66,7 +66,7 @@ const TagSetter: React.FC<TagSetterProps> = (
         <div className={'m-t-small'}>
           <Button type={'submit'} disabled={maxLength ? (tags.length >= maxLength) : false}>
             <div className={'flex-content text-nowrap'}>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5" width={'20px'}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5" width={'22px'}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
               </svg>
             </div>

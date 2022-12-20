@@ -50,8 +50,8 @@ const ToDoList: React.FC<IToDoListProps> = (
   return (
     <div>
       <div className={styles.todoContainer}>
-        <div className={'m-t-small'}>
-          <Button handler={() => setDialogOpened(true)}>
+        <div className={`${styles.btnWidth} m-t-small`}>
+          <Button handler={() => setDialogOpened(true)} width={'fill'}>
             <div className={'flex-content text-nowrap'}>
               Добавить задачу
             </div>
