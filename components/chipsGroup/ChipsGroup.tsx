@@ -1,25 +1,25 @@
 import React, {memo} from 'react';
-import styles from './ChipsGroup.module.css';
-import Chip from "../chip/Chip";
-import {ChipsGroupElement, style} from "./types";
-import {OnCloseInterface} from "@/components/chip/types";
 
-interface ChipGroupProps {
-  chips?: ChipsGroupElement[],
+import styles from './ChipsGroup.module.css';
+import {Chip} from "../chip";
+import {IChipsGroupElement, style} from "./types";
+import {OnCloseInterface} from "@/components/chip";
+
+interface IChipGroupProps {
+  chips?: IChipsGroupElement[],
   style?: style,
   primaryColor?: string,
-  setChips?: (chips: ChipsGroupElement[]) => void
+  setChips?: (chips: IChipsGroupElement[]) => void
 }
 
-const ChipsGroup: React.FC<ChipGroupProps> = (
+const ChipsGroup: React.FC<IChipGroupProps> = (
   {
     style = 'contrast',
     primaryColor = '336',
     chips = [],
     setChips
   }) => {
-
-  const deleteChip:OnCloseInterface = (e, ID) => {
+  const deleteChip: OnCloseInterface = (e, ID) => {
     if (setChips) {
       setChips(chips.filter(chip => chip.ID !== ID));
     }

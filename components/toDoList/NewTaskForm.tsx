@@ -1,19 +1,20 @@
-import React, {ChangeEventHandler, memo, useRef, useState} from 'react';
+import React, {ChangeEventHandler, memo, useEffect, useState} from 'react';
+
 import {Input} from "@/components/input";
 import {Button} from "@/components/button";
-import {ChipsGroupElement} from "@/components/chipsGroup";
-import TagSetter from "@/components/toDoList/TagSetter";
 import {Dialog} from "@/components/dialog";
+import {IChipsGroupElement} from "@/components/chipsGroup";
+import TagSetter from "@/components/toDoList/TagSetter";
 
 interface TaskProps {
   opened: boolean,
   onCLose: () => void,
-  onSubmit: (task: string, tags: ChipsGroupElement[]) => void,
+  onSubmit: (task: string, tags: IChipsGroupElement[]) => void,
 }
 
 const NewTaskForm: React.FC<TaskProps> = ({opened, onCLose, onSubmit}) => {
   const [task, setTask] = useState('');
-  const [tags, setTags] = useState<ChipsGroupElement[]>([]);
+  const [tags, setTags] = useState<IChipsGroupElement[]>([]);
 
   const onChange: ChangeEventHandler = (e) => {
     setTask((e.target as HTMLInputElement).value);

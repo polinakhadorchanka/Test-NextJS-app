@@ -65,9 +65,12 @@ html {
     gap: 10px;
 }
 
+.text-nowrap {
+    white-space: nowrap;
+}
+
 .nowrap {
     flex-wrap: nowrap;
-    white-space: nowrap;
 }
 
 .divideBottom {
@@ -87,7 +90,7 @@ html {
     }
 }
 
-.marginTop {
+.m-t-small {
     margin-top: 10px;
 }
 

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import {Layout} from "../layout";
-import ToDoList from "@/components/toDoList/ToDoList";
+import {ToDoList} from "@/components/toDoList";
 
 export default function Home() {
     return (
@@ -12,7 +12,11 @@ export default function Home() {
       </Head>
       <Layout>
         <div className={'container'}>
-          <ToDoList />
+          <ToDoList defaultTasks={[
+            {ID: 1, name: 'Task 1', tags: [{ID: 1, value: 'frontend'}]},
+            {ID: 2, name: 'Task number 2', tags: [{ID: 1, value: 'frontend'}, {ID: 2, value: 'backend'}]},
+            {ID: 3, name: 'Task 3', tags: [{ID: 1, value: 'backend'}]}
+          ]}/>
         </div>
       </Layout>
     </div>

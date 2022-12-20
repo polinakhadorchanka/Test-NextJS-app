@@ -1,6 +1,6 @@
 export type style = 'light' | 'contrast' | 'outlined';
 
-export interface ChipsGroupElement {
+export interface IChipsGroupElement {
   ID: number,
   value: string
 }

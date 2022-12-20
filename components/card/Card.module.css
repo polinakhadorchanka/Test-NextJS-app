@@ -5,10 +5,8 @@
 
     display: inline-block;
     box-sizing: border-box;
-
     background: var(--white);
     border: 1px solid var(--color);
     border-radius: 12px;
-
     padding: 20px 15px;
 }

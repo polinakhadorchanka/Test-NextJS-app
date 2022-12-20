@@ -1,4 +1,5 @@
 import React, {memo} from 'react';
+
 import {ITask} from "@/components/toDoList/types";
 import {Chip} from "@/components/chip";
 import styles from './ToDoList.module.css';

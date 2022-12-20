@@ -20,7 +20,6 @@
     display: grid;
     grid-template-columns: minmax(auto,95%) minmax(auto,5%);
     gap: 20px;
-
     font-size: 1.3rem;
 }
 
@@ -38,13 +37,8 @@
     gap: 5px;
 }
 
-.columnFirst {
-
-}
-
 .columnSecond {
     justify-self: end;
-
     display: flex;
     justify-content: center;
 }

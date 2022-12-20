@@ -1,13 +1,14 @@
 import React, {memo, PropsWithChildren, useEffect, useState} from 'react';
+
 import styles from './Card.module.css';
 
-interface CardProps extends PropsWithChildren {
+interface ICardProps extends PropsWithChildren {
   width?: 'auto' | 'fill',
   height?: 'auto' | 'fill',
   primaryColor?: string,
 }
 
-const Card: React.FC<CardProps> = (
+const Card: React.FC<ICardProps> = (
   {
     width = 'auto',
     height = 'auto',

@@ -1,14 +1,15 @@
 import React, {ChangeEventHandler, FormEventHandler, useState} from 'react';
+
 import styles from './ToDoList.module.css';
 import {Input} from "@/components/input";
 import {Button} from "@/components/button";
-import {ChipsGroup, ChipsGroupElement} from "@/components/chipsGroup";
+import {ChipsGroup, IChipsGroupElement} from "@/components/chipsGroup";
 
 interface TagSetterProps {
   label: string,
-  tags: ChipsGroupElement[],
+  tags: IChipsGroupElement[],
   maxLength?: number,
-  setTags: (tags: ChipsGroupElement[]) => void
+  setTags: (tags: IChipsGroupElement[]) => void
 }
 
 const TagSetter: React.FC<TagSetterProps> = (
@@ -18,7 +19,11 @@ const TagSetter: React.FC<TagSetterProps> = (
     maxLength,
     setTags
   }) => {
-  const [currentTag, setCurrentTag] = useState<ChipsGroupElement>({ID: 0, value: ''});
+  const [currentTag, setCurrentTag] = useState<IChipsGroupElement>(
+    {
+      ID: 0,
+      value: ''
+    });
 
   const onChangeTag: ChangeEventHandler = (e) => {
     setCurrentTag(
@@ -28,9 +33,9 @@ const TagSetter: React.FC<TagSetterProps> = (
       });
   }
 
-  const onSubmit:FormEventHandler = (e) => {
+  const onSubmit: FormEventHandler = (e) => {
     e.preventDefault();
-    if(currentTag.value.length > 0 && !tags.find(tag => tag.value === currentTag.value)) {
+    if (currentTag.value.length > 0 && !tags.find(tag => tag.value === currentTag.value)) {
       setTags([...tags, currentTag]);
 
       setCurrentTag(prev => {
@@ -58,11 +63,10 @@ const TagSetter: React.FC<TagSetterProps> = (
           width={'fill'}
           value={currentTag.value}
           onChange={onChangeTag}/>
-        <div className={'marginTop'}>
+        <div className={'m-t-small'}>
           <Button type={'submit'} disabled={maxLength ? (tags.length >= maxLength) : false}>
-            <div className={'flex-content nowrap'}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
-                   stroke="currentColor" width={'20px'}>
+            <div className={'flex-content text-nowrap'}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5" width={'20px'}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
               </svg>
             </div>

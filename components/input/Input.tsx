@@ -1,7 +1,8 @@
 import React, {ChangeEventHandler, memo, useEffect, useRef, useState} from 'react';
+
 import styles from './Input.module.css';
 
-interface InputProps {
+interface IInputProps {
   name?: string,
   type?: 'text' | 'password',
   value?: string,
@@ -14,7 +15,7 @@ interface InputProps {
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
-const Input: React.FC<InputProps> = (
+const Input: React.FC<IInputProps> = (
   {
     name,
     type = 'text',

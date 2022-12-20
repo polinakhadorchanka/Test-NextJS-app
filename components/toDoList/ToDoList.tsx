@@ -1,16 +1,29 @@
-import React, {useMemo, useState} from 'react';
-import styles from './ToDoList.module.css';
-import TagSetter from "@/components/toDoList/TagSetter";
-import {ChipsGroupElement} from "@/components/chipsGroup";
+import React, {memo, useMemo, useState} from 'react';
+
+import {IChipsGroupElement} from "@/components/chipsGroup";
 import {Button} from "@/components/button";
+
+import styles from './ToDoList.module.css';
+import TagSetter from "./TagSetter";
 import NewTaskForm from "./NewTaskForm";
 import {ITask} from "./types";
 import Task from "./Task";
+import {useMount} from "@/hooks/useMount";
 
-const ToDoList = () => {
-  const [tasks, setTasks] = useState<ITask[]>([]);
-  const [filters, setFilters] = useState<ChipsGroupElement[]>([]);
+interface IToDoListProps {
+  defaultTasks?: ITask[],
+  defaultFilters?: IChipsGroupElement[]
+}
+
+const ToDoList: React.FC<IToDoListProps> = (
+  {
+    defaultTasks = [],
+    defaultFilters = []
+  }) => {
+  const [tasks, setTasks] = useState<ITask[]>(defaultTasks);
+  const [filters, setFilters] = useState<IChipsGroupElement[]>(defaultFilters);
   const [dialogOpened, setDialogOpened] = useState(false);
+  const mounted = useMount(dialogOpened);
 
   const filteredTasks = useMemo(() => {
     if (filters.length > 0) {
@@ -24,7 +37,7 @@ const ToDoList = () => {
     } else return tasks;
   }, [tasks, filters]);
 
-  const onSubmit = (task: string, tags: ChipsGroupElement[]) => {
+  const onSubmit = (task: string, tags: IChipsGroupElement[]) => {
     setTasks(prev => {
       return [...tasks, {ID: prev.slice(-1)[0] ? prev.slice(-1)[0].ID + 1 : 1, name: task, tags}]
     })
@@ -37,9 +50,9 @@ const ToDoList = () => {
   return (
     <div>
       <div className={styles.todoContainer}>
-        <div className={'marginTop'}>
+        <div className={'m-t-small'}>
           <Button handler={() => setDialogOpened(true)}>
-            <div className={'flex-content nowrap'}>
+            <div className={'flex-content text-nowrap'}>
               Добавить задачу
             </div>
           </Button>
@@ -51,7 +64,8 @@ const ToDoList = () => {
         {
           filteredTasks &&
           filteredTasks.map((task, index) => {
-            return <div key={task.ID} className={index === filteredTasks.length ? '' : 'divideBottom'}
+            return <div key={task.ID}
+                        className={index === filteredTasks.length - 1 ? '' : 'divideBottom'}
                         style={{padding: '10px 0'}}>
               <Task task={task} onDelete={deleteTask}/>
             </div>
@@ -60,11 +74,11 @@ const ToDoList = () => {
       </div>
 
       {
-        dialogOpened &&
+        mounted &&
         <NewTaskForm onSubmit={onSubmit} opened={dialogOpened} onCLose={() => setDialogOpened(false)}/>
       }
     </div>
   );
 };
 
-export default ToDoList;
+export default memo(ToDoList);

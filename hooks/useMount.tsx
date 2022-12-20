@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 
+const ANIMATION_TIME = 300;
+
 export const useMount = (opened: boolean) => {
   const [mounted, setMounted] = useState(false);
 
@@ -9,11 +11,9 @@ export const useMount = (opened: boolean) => {
     } else if(!opened && mounted) {
       setTimeout(() => {
         setMounted(false);
-      }, 300)
+      }, ANIMATION_TIME)
     }
   }, [opened]);
 
-  return {
-    mounted
-  }
+  return mounted;
 }

@@ -1,17 +1,18 @@
 import React, {memo, PropsWithChildren, useEffect, useState} from 'react';
-import styles from './Button.module.css';
-import {btnType, style} from "./types";
 
-interface ButtonProps extends PropsWithChildren {
+import styles from './Button.module.css';
+import {btnType, btnStyle} from "./types";
+
+interface IButtonProps extends PropsWithChildren {
   type?: btnType,
-  style?: style,
+  style?: btnStyle,
   width?: 'auto' | 'fill',
   primaryColor?: string,
   disabled?: boolean,
   handler?: any
 }
 
-const Button: React.FC<ButtonProps> = (
+const Button: React.FC<IButtonProps> = (
   {
     type = 'button',
     style = 'contrast',

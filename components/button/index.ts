@@ -1,4 +1,4 @@
 import Button from './Button';
-export * from './types';
 
+export * from './types';
 export {Button}
