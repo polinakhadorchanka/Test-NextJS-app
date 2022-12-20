@@ -1,0 +1,50 @@
+.todoContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.tagSetter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(auto,95%) minmax(auto,5%);
+    gap: 20px;
+
+    font-size: 1.3rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.tagList {
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.columnFirst {
+
+}
+
+.columnSecond {
+    justify-self: end;
+
+    display: flex;
+    justify-content: center;
+}

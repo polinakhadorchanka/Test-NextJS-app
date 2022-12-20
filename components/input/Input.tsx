@@ -1,34 +1,32 @@
-import React, {memo, PropsWithChildren, ReactElement, useEffect, useRef, useState} from 'react';
+import React, {ChangeEventHandler, memo, useEffect, useRef, useState} from 'react';
 import styles from './Input.module.css';
-import css from "styled-jsx/css";
 
 interface InputProps {
-  type?: 'text' | 'password',
   name?: string,
-  defaultValue?: string,
+  type?: 'text' | 'password',
+  value?: string,
   width?: 'auto' | 'fill',
   primaryColor?: string,
   disabled?: boolean,
   label?: string,
   required?: boolean,
   autoComplete?: boolean,
-  handler?: () => void
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 const Input: React.FC<InputProps> = (
   {
-    type = 'text',
     name,
-    defaultValue = '',
+    type = 'text',
+    value = '',
     width = 'auto',
     primaryColor = '336',
     disabled = false,
     label,
     required = false,
     autoComplete = false,
-    handler
+    onChange
   }) => {
-  const [value, setValue] = useState(defaultValue);
   const [cssStyle, setStyle] = useState({});
   const labelRef = useRef<HTMLLabelElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -52,8 +50,8 @@ const Input: React.FC<InputProps> = (
         required={required}
         value={value}
         disabled={disabled}
-        autoComplete={autoComplete ? 'yes' : 'no'}
-        onChange={(e) => {setValue(e.target.value)}}
+        autoComplete={autoComplete ? 'on' : 'off'}
+        onChange={(e) => {onChange && onChange(e)}}
       />
       <label
         className={`${value.length > 0 ? styles.up : ''}`}

@@ -13,8 +13,9 @@
 
     padding: 10px 20px;
 
+    outline-color: var(--black);
+    outline-width: thin;
     cursor: pointer;
-    outline: none;
 }
 
 .contrast {

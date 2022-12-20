@@ -2,6 +2,7 @@ import React, {memo} from 'react';
 import styles from './ChipsGroup.module.css';
 import Chip from "../chip/Chip";
 import {ChipsGroupElement, style} from "./types";
+import {OnCloseInterface} from "@/components/chip/types";
 
 interface ChipGroupProps {
   chips?: ChipsGroupElement[],
@@ -18,7 +19,7 @@ const ChipsGroup: React.FC<ChipGroupProps> = (
     setChips
   }) => {
 
-  const deleteChip = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, ID?: number) => {
+  const deleteChip:OnCloseInterface = (e, ID) => {
     if (setChips) {
       setChips(chips.filter(chip => chip.ID !== ID));
     }

@@ -1,0 +1,64 @@
+.layout {
+    --header-bg: hsl(336, 25%, 50%);
+    --main-bg: #ffffff;
+    --footer-bg: #ffffff;
+    --white: #ffffff;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+}
+
+.header {
+    position: relative;
+    padding: 20px;
+
+    color:var(--white);
+    font-family: "Open Sans", serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.6em;
+    line-height: 100%;
+
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 4px rgba(99, 93, 96, 0.5);
+}
+
+.nav {
+    padding: 20px;
+    background-color: var(--white);
+}
+
+.ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 25px;
+}
+
+.li {
+    font-family: "Open Sans", serif;
+    line-height: 100%;
+}
+
+.li > a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.li > a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    padding-top: calc(80px + 1.6em + 1em + 40px);
+}

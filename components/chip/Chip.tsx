@@ -1,12 +1,12 @@
 import React, {memo, PropsWithChildren, useEffect, useState} from 'react';
 import styles from './Chip.module.css';
-import { style } from './types';
+import {OnCloseInterface, style} from './types';
 
 interface ChipProps extends PropsWithChildren {
   ID?: number,
   style?: style,
   primaryColor?: string,
-  onClose?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>, ID?: number) => void
+  onClose?: OnCloseInterface
 }
 
 const Chip: React.FC<ChipProps> = (

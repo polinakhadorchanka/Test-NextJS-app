@@ -1,7 +1,7 @@
 .inputContainer {
     --color: hsla(336, 25%, 51%, 0.4);
     --color-hover: hsl(336, 45%, 42%);
-    --bg: #ffffff;
+    --bg: transparent;
     --black: #000000;
     --disabled: #c4c4c4;
 
@@ -13,7 +13,7 @@
 
 .inputContainer label {
     position: absolute;
-    bottom: 1px;
+    top: 15px;
     left: 0;
     padding: 6px 10px 7px 10px;
 
@@ -56,7 +56,7 @@
 
 .inputContainer .up,
 .inputContainer input:focus + label {
-    bottom: 20px;
+    top: 1px;
     padding: 5px 10px 10px 10px;
 
     font-size: 0.8rem;

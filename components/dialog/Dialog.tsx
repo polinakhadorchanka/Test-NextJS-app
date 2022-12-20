@@ -1,6 +1,5 @@
 import React, {memo, PropsWithChildren, useEffect, useState} from 'react';
 import styles from './Dialog.module.css';
-import {Portal} from "next/dist/client/portal";
 import {useMount} from "../../hooks/useMount";
 
 interface DialogProps extends PropsWithChildren {
@@ -27,13 +26,11 @@ const Dialog: React.FC<DialogProps> = (
     <>
       {
         mounted &&
-        <Portal type={'portal'}>
-          <div className={`${styles.dialog} ${animation ? styles.opened : null}`} onClick={onClose}>
-            <div className={`${styles.content}`} onClick={(e) => e.stopPropagation()}>
-              {children}
-            </div>
+        <div className={`${styles.dialog} ${animation ? styles.opened : null}`} onClick={onClose}>
+          <div className={`${styles.content}`} onClick={(e) => e.stopPropagation()}>
+            {children}
           </div>
-        </Portal>
+        </div>
       }
     </>
   );

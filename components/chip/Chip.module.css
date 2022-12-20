@@ -1,7 +1,5 @@
 .chipContainer {
     display: inline-block;
-    padding-top: 7px;
-    padding-right: 7px;
 }
 
 .chip {
@@ -18,9 +16,10 @@
 
     font-family: "Open Sans", serif;
     font-style: normal;
-    font-size: 1rem;
+    line-height: 100%;
+    font-size: inherit;
 
-    padding: 5px 15px;
+    padding: 5px 12px;
     border-radius: 20px;
 
     user-select: none;

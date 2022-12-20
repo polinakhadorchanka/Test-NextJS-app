@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from '@/components/button';
+import {Layout} from "../layout";
 
 const Buttons = () => {
   return (
-    <main className={'main'}>
+    <Layout>
       <div className={'container'}>
         <div className={'content'}>
           <div className={'content__description'}>
@@ -128,7 +129,7 @@ const Buttons = () => {
           </div>
         </div>
       </div>
-    </main>
+    </Layout>
   );
 };
 
