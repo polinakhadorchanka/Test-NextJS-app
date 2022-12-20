@@ -1,3 +1,8 @@
+## Preview
+A preview of the app is available [here](https://test-next-js-app-ochre.vercel.app/)
+
+##
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
